@@ -15,7 +15,7 @@ from scipy.io import wavfile
 SYNCNET_MODEL = None
 FACE_DETECTOR = None
 
-def load_models(device="cpu"):
+def load_models(device="cuda"):
     """
     Load SyncNet and face detector once at server startup.
     """

@@ -114,7 +114,7 @@ def generate_summary(tracks, dists, frame_rate=25):
 
 @app.on_event("startup")
 async def startup_event():
-    load_models(device="cpu") 
+    load_models(device="cuda") 
     print("[INFO] Models loaded successfully")
 
 @app.post("/inference")
