@@ -117,7 +117,7 @@ async def startup_event():
     load_models(device="cuda") 
     print("[INFO] Models loaded successfully")
 
-@app.post("/inference")
+@app.post("/lipsync/inference")
 async def inference(video: UploadFile = File(...)):
     allowed_extensions = {".mp4", ".avi", ".mov", ".mkv", ".flv", ".wmv"}
     file_ext = os.path.splitext(video.filename)[1].lower()
