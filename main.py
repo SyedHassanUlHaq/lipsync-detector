@@ -5,7 +5,15 @@ from infer import run_inference, load_models
 
 
 app = FastAPI(title="SyncNet Inference API", version="1.0.0")
+from fastapi.middleware.cors import CORSMiddleware
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://syntheticvideodetector.netlify.app"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 def convert_to_serializable(obj):
     """
     Convert numpy arrays and other non-JSON-serializable types to native Python types.
